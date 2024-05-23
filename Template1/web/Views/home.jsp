@@ -16,7 +16,7 @@
                 <input type="text" placeholder="Search...">
             </div>
             <div class="nav-right">
-                <a href="Views/Login.jsp">Login</a>
+                <a href="login.jsp">Login</a>
                 <a href="#">Signup</a>
             </div>
         </nav>
