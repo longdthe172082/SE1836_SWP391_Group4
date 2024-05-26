@@ -11,30 +11,92 @@ package Model;
 public class Account {
     private int UserId;
     private String UserName;
-    private String Password;
-    private String AccName;
-    private String Fullname;
-    private String Dob;
-    private String Sex;
-    private String Address;
-    private String PhoneNumber;
-    private String Email;
+    private String Pass;
+    private String accName;
+    private String fullName;
+    private String dob;
+    private String sex;
+    private String address;
+    private String phoneNumber;
+    private String email;
     private Role RoleId;
 
     public Account() {
     }
 
-    public Account(int UserId, String UserName, String Password, String AccName, String Fullname, String Dob, String Sex, String Address, String PhoneNumber, String Email, Role RoleId) {
+    public Account(String UserName, String Pass, String accName, String fullName, String dob, String sex, String address, String phoneNumber, String email, Role RoleId) {
+        this.UserName = UserName;
+        this.Pass = Pass;
+        this.accName = accName;
+        this.fullName = fullName;
+        this.dob = dob;
+        this.sex = sex;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.RoleId = RoleId;
+    }
+
+    public String getAccName() {
+        return accName;
+    }
+
+    public void setAccName(String accName) {
+        this.accName = accName;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    public Account(int UserId, String UserName, String Pass, Role RoleId) {
         this.UserId = UserId;
         this.UserName = UserName;
-        this.Password = Password;
-        this.AccName = AccName;
-        this.Fullname = Fullname;
-        this.Dob = Dob;
-        this.Sex = Sex;
-        this.Address = Address;
-        this.PhoneNumber = PhoneNumber;
-        this.Email = Email;
+        this.Pass = Pass;
         this.RoleId = RoleId;
     }
 
@@ -54,68 +116,12 @@ public class Account {
         this.UserName = UserName;
     }
 
-    public String getPassword() {
-        return Password;
+    public String getPass() {
+        return Pass;
     }
 
-    public void setPassword(String Password) {
-        this.Password = Password;
-    }
-
-    public String getAccName() {
-        return AccName;
-    }
-
-    public void setAccName(String AccName) {
-        this.AccName = AccName;
-    }
-
-    public String getFullname() {
-        return Fullname;
-    }
-
-    public void setFullname(String Fullname) {
-        this.Fullname = Fullname;
-    }
-
-    public String getDob() {
-        return Dob;
-    }
-
-    public void setDob(String Dob) {
-        this.Dob = Dob;
-    }
-
-    public String getSex() {
-        return Sex;
-    }
-
-    public void setSex(String Sex) {
-        this.Sex = Sex;
-    }
-
-    public String getAddress() {
-        return Address;
-    }
-
-    public void setAddress(String Address) {
-        this.Address = Address;
-    }
-
-    public String getPhoneNumber() {
-        return PhoneNumber;
-    }
-
-    public void setPhoneNumber(String PhoneNumber) {
-        this.PhoneNumber = PhoneNumber;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setPass(String Pass) {
+        this.Pass = Pass;
     }
 
     public Role getRoleId() {
@@ -128,9 +134,8 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" + "UserId=" + UserId + ", UserName=" + UserName + ", Password=" + Password + ", AccName=" + AccName + ", Fullname=" + Fullname + ", Dob=" + Dob + ", Sex=" + Sex + ", Address=" + Address + ", PhoneNumber=" + PhoneNumber + ", Email=" + Email + ", RoleId=" + RoleId + '}';
+        return "Account{" + "UserId=" + UserId + ", UserName=" + UserName + ", Pass=" + Pass + ", RoleId=" + RoleId + '}';
     }
-
     
     
 }

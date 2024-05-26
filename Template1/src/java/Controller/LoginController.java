@@ -5,6 +5,8 @@
 
 package Controller;
 
+import DAL.UserDAO;
+import Model.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -14,9 +16,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author admin
+ * @author Admin
  */
-public class HomePage extends HttpServlet {
+public class LoginController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -33,10 +35,10 @@ public class HomePage extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet HomePage</title>");  
+            out.println("<title>Servlet LoginController</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet HomePage at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet LoginController at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -53,7 +55,7 @@ public class HomePage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.getRequestDispatcher("Views/home.jsp").forward(request, response);
+        request.getRequestDispatcher("login.jsp").forward(request, response);
     } 
 
     /** 
@@ -66,7 +68,16 @@ public class HomePage extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.getRequestDispatcher("Views/home.jsp").forward(request, response);
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        Account a = new UserDAO().getAccountLogin(username, password);
+        if(a == null){
+            request.setAttribute("error", "Wrong account");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }else{
+            request.getSession().setAttribute("account", a);
+            request.getRequestDispatcher("home").forward(request, response);
+        }
     }
 
     /** 
