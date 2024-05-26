@@ -43,7 +43,7 @@
                                                 <input type="text" name="fullName" value="${sessionScope.newAccount.getFullName()}" id="exampleInputPassword1" placeholder="">
                                             </div>
                                             <div>
-                                                <label for="exampleInputPassword1">DoB</label>
+                                                <label for="exampleInputPassword1">Date of Birth</label>
                                                 <input type="date" name="dob" value="${sessionScope.newAccount.getDob()}" id="exampleInputPassword1" placeholder="">
                                             </div>
                                             <div>
