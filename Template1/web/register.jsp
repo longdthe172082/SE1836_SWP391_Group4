@@ -77,16 +77,16 @@
                                                                     </form>
                                                                     </div>
                                                                     <script>
-                                                                        // Lắng nghe sự kiện change trên select accName
+                                                                        // Check select accName
                                                                         document.getElementById("accName").addEventListener("change", function () {
-                                                                            var accName = this.value; // Lấy giá trị của accName khi select box thay đổi
-                                                                            var roleInput = document.getElementById("role"); // Lấy phần tử input role
+                                                                            var accName = this.value; // Get value accName when select box change
+                                                                            var roleInput = document.getElementById("role");
 
-                                                                            // Thiết lập giá trị cho role tương ứng với giá trị của accName
+                                                                            // Set value for rolde, follow Database
                                                                             if (accName === "Mentor") {
-                                                                                roleInput.value = "3"; // Gán giá trị 3 cho role nếu accName là Mentor
+                                                                                roleInput.value = "3";
                                                                             } else if (accName === "Mentee") {
-                                                                                roleInput.value = "4"; // Gán giá trị 4 cho role nếu accName là Mentee
+                                                                                roleInput.value = "4";
                                                                             }
                                                                         });
                                                                     </script>
