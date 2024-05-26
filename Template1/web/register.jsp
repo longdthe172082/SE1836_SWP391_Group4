@@ -14,8 +14,6 @@
         <link href="css/register.css" rel="stylesheet" type="text/css"/>
 
         <!-- Compiled and minified JavaScript -->
-
-
     </head>
     <body>
         <div class="container">
@@ -36,14 +34,17 @@
                                             </div>
                                             <div>
                                                 <label for="exampleInputPassword1">Acc Name</label>
-                                                <input type="text" name="accName" value="${sessionScope.newAccount.getAccName()}" id="exampleInputPassword1" placeholder="">
+                                                <select type="text" name="accName" value="${sessionScope.newAccount.getAccName()}" id="accName" placeholder="">
+                                                    <option value="Mentor">Mentor</option>
+                                                    <option value="Mentee">Mentee</option>
+                                                </select>
                                             </div>
                                             <div>
                                                 <label for="exampleInputPassword1">Full Name</label>
                                                 <input type="text" name="fullName" value="${sessionScope.newAccount.getFullName()}" id="exampleInputPassword1" placeholder="">
                                             </div>
                                             <div>
-                                                <label for="exampleInputPassword1">Date of Birth</label>
+                                                <label for="exampleInputPassword1">DoB</label>
                                                 <input type="date" name="dob" value="${sessionScope.newAccount.getDob()}" id="exampleInputPassword1" placeholder="">
                                             </div>
                                             <div>
@@ -69,18 +70,26 @@
                                                             <input type="email" name="email" value="${sessionScope.newAccount.getEmail()}" class="form-control" id="exampleInputPassword1" placeholder="">
                                                         </div>
                                                         <div>
-                                                            <label for="exampleInputPassword1">Role</label>
-                                                            <div>
-                                                                <select name="role" class="form-control">
-                                                                    <option value="3">Mentor</option>
-                                                                    <option value="4">Mentee</option>
-                                                                </select>
-                                                            </div>
+                                                            <input type="hidden" name="role" id="role">
                                                         </div>
                                                         <div><h5 style="color: red">${inputEmpty}<h5></div>
                                                                     <button type="submit">Register</button>
                                                                     </form>
                                                                     </div>
+                                                                    <script>
+                                                                        // Lắng nghe sự kiện change trên select accName
+                                                                        document.getElementById("accName").addEventListener("change", function () {
+                                                                            var accName = this.value; // Lấy giá trị của accName khi select box thay đổi
+                                                                            var roleInput = document.getElementById("role"); // Lấy phần tử input role
+
+                                                                            // Thiết lập giá trị cho role tương ứng với giá trị của accName
+                                                                            if (accName === "Mentor") {
+                                                                                roleInput.value = "3"; // Gán giá trị 3 cho role nếu accName là Mentor
+                                                                            } else if (accName === "Mentee") {
+                                                                                roleInput.value = "4"; // Gán giá trị 4 cho role nếu accName là Mentee
+                                                                            }
+                                                                        });
+                                                                    </script>
                                                                     </body>
 
                                                                     </html>
