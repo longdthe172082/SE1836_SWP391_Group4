@@ -21,7 +21,7 @@ public class MailService {
     public static void sendEmail(String toEmail, String subject, String body) {
         // Thông tin tài khoản email
         final String username = "happyprogramingcenter@gmail.com";
-        final String password = "jnqm ekpy mtlj qvmn";//app password
+        final String password = "qwqu cpvk elhz fzvw";//app password
         //Tuan123456
         // Cấu hình properties cho Mail Server
         Properties props = new Properties();

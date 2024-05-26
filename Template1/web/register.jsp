@@ -70,7 +70,7 @@
                                                             <input type="email" name="email" value="${sessionScope.newAccount.getEmail()}" class="form-control" id="exampleInputPassword1" placeholder="">
                                                         </div>
                                                         <div>
-                                                            <input type="hidden" name="role" id="role">
+                                                            <input type="hidden" value="3" name="role" id="role">
                                                         </div>
                                                         <div><h5 style="color: red">${inputEmpty}<h5></div>
                                                                     <button type="submit">Register</button>
